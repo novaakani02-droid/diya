@@ -1,0 +1,1220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Diya Edit — Issue No. 21 | A Special Birthday Edition</title>
+    <meta name="description" content="An immersive luxury editorial birthday experience and interactive memory archive for Mardiya (Diya) turning 21 on 6 November 2026." />
+    <meta property="og:title" content="The Diya Edit — Issue No. 21" />
+    <meta property="og:description" content="For Diya, with all our love. A celebration of memories, sisterhood, and 21 years of grace." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google Fonts: Cormorant Garamond, DM Sans, Caveat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/animations.css" />
+    <link rel="stylesheet" href="/css/responsive.css" />
+
+    <!-- CDN Libraries: GSAP & Canvas Confetti -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  </head>
+  <body>
+
+    <!-- ====================================================================
+         SECTION 00 — THE INVITATION (ANIMATED OPENING ENVELOPE)
+         ==================================================================== -->
+    <div id="invitation-screen" class="invitation-screen" role="dialog" aria-modal="true" aria-label="A special birthday invitation for Diya">
+      <div class="invitation-scene">
+        
+        <div class="invitation-header-note">
+          <p class="invitation-kicker">ISSUE NO. 21 · PRIVATE DELIVERY</p>
+          <p class="invitation-subtext">A handwritten treasure for someone irreplaceable...</p>
+        </div>
+
+        <!-- Fully Responsive Geometrically Sealed Envelope -->
+        <div id="envelope-box" class="envelope-box" title="Click to unseal your birthday invitation">
+          <div class="envelope-base">
+            
+            <!-- Envelope Cavity Background with Subtle Pattern -->
+            <div class="envelope-cavity">
+              <div class="envelope-cavity-pattern"></div>
+            </div>
+
+            <!-- Sliding Letter Card Hidden Inside Envelope Cavity -->
+            <div id="invitation-letter-card" class="invitation-letter-card">
+              <p class="letter-kicker">THE DIYA EDIT · SPECIAL EDITION NO. 21</p>
+              <p class="letter-message">
+                “Some people make life a little more beautiful simply by being in it.”
+              </p>
+              <p class="letter-note">
+                This little collection is for you, Diya. A celebration of the memories we’ve made, the moments we cherish, and the love that distance could never take away.
+              </p>
+              <div class="letter-actions-row">
+                <button id="open-surprise-btn" class="btn btn-primary">
+                  Open Your Surprise ♡
+                </button>
+                <button id="close-envelope-btn" class="btn btn-secondary" style="font-size: 0.75rem; padding: 0.65rem 1.25rem;">
+                  Fold Back ✉
+                </button>
+              </div>
+            </div>
+
+            <!-- Front Envelope Pocket (Left, Right, Bottom Vector Folds with Stitching & Script) -->
+            <div class="envelope-front-pocket">
+              <svg class="pocket-svg" viewBox="0 0 480 310" preserveAspectRatio="none">
+                <defs>
+                  <!-- Deep burgundy fold gradients -->
+                  <linearGradient id="leftFoldGrad" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#591523" />
+                    <stop offset="100%" stop-color="#47101C" />
+                  </linearGradient>
+                  <linearGradient id="rightFoldGrad" x1="1" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#541320" />
+                    <stop offset="100%" stop-color="#420D17" />
+                  </linearGradient>
+                  <linearGradient id="bottomFoldGrad" x1="0" y1="1" x2="0" y2="0">
+                    <stop offset="0%" stop-color="#6E1F2E" />
+                    <stop offset="70%" stop-color="#5E1825" />
+                    <stop offset="100%" stop-color="#50121E" />
+                  </linearGradient>
+                </defs>
+
+                <!-- Left triangular fold -->
+                <polygon points="0,0 240,155 0,310" fill="url(#leftFoldGrad)" />
+
+                <!-- Right triangular fold -->
+                <polygon points="480,0 240,155 480,310" fill="url(#rightFoldGrad)" />
+
+                <!-- Bottom triangular fold meeting at center -->
+                <polygon points="0,310 240,140 480,310" fill="url(#bottomFoldGrad)" filter="drop-shadow(0 -4px 6px rgba(25,5,10,0.3))" />
+
+                <!-- Perimeter Gold Stitching -->
+                <rect x="8" y="8" width="464" height="294" rx="10" fill="none" stroke="rgba(250, 158, 188, 0.35)" stroke-dasharray="6 4" stroke-width="1.2" />
+
+                <!-- Calligraphy on Bottom Pocket -->
+                <text x="240" y="245" text-anchor="middle" font-family="'Caveat', cursive" font-size="34" font-weight="600" fill="#FCE8F0" letter-spacing="1">
+                  For Mardiya ♡
+                </text>
+                <text x="240" y="275" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="10.5" font-weight="700" fill="#E7C98A" letter-spacing="3.5">
+                  TAP SEAL TO UNLOCK
+                </text>
+              </svg>
+            </div>
+
+            <!-- Top Flap (Triangular Vector Flap Folded DOWN over the pocket) -->
+            <div id="envelope-top-flap" class="envelope-top-flap">
+              <svg class="flap-svg" viewBox="0 0 480 185" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="flapOuterGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#7B2435" />
+                    <stop offset="70%" stop-color="#6B1F2D" />
+                    <stop offset="100%" stop-color="#5A1523" />
+                  </linearGradient>
+                </defs>
+                <!-- Flap pointing down to point (240, 180) -->
+                <polygon points="0,0 480,0 240,180" fill="url(#flapOuterGrad)" />
+                <!-- Flap inner dashed stitching -->
+                <polyline points="14,10 240,170 466,10" fill="none" stroke="rgba(250, 158, 188, 0.4)" stroke-dasharray="6 4" stroke-width="1.2" />
+              </svg>
+            </div>
+
+            <!-- Pink Wax Seal Affixed Right At the Apex of the Closed Flap -->
+            <button id="wax-seal-button" class="wax-seal-button" aria-label="Break wax seal and open envelope">
+              <span class="wax-seal-text">M</span>
+              <div class="wax-seal-ribbon-tail"></div>
+            </button>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         TOP BAR NAVIGATION (Strict 3-zone contract)
+         ==================================================================== -->
+    <header class="site-header">
+      <div class="container header-container">
+        
+        <!-- Zone 1: Single text element wordmark -->
+        <a href="#the-diya-edit" class="brand-mark">
+          THE DIYA EDIT
+          <span>ISSUE NO. 21</span>
+        </a>
+
+        <!-- Zone 2: 4-5 concise single-line nav links -->
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#the-diya-edit" class="nav-link active">Cover</a></li>
+            <li><a href="#the-girl" class="nav-link">The Girl</a></li>
+            <li><a href="#soul-moments" class="nav-link">Soul Moments</a></li>
+            <li><a href="#four-hearts" class="nav-link">Four Hearts</a></li>
+            <li><a href="#across-the-miles" class="nav-link">Across The Miles</a></li>
+            <li><a href="#a-new-chapter" class="nav-link">A New Chapter</a></li>
+          </ul>
+        </nav>
+
+        <!-- Zone 3: 1 primary action -->
+        <div class="header-action">
+          <button class="btn btn-primary celebrate-btn" style="padding: 0.5rem 1.25rem; font-size: 0.75rem;">
+            Celebrate 21 ✨
+          </button>
+          <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- ====================================================================
+         SECTION 01 — THE COVER STORY (LUXURY VOGUE-STYLE EDITORIAL COVER)
+         ==================================================================== -->
+    <section id="the-diya-edit" class="section-cover">
+      <div class="container">
+        <div class="cover-monograph-frame">
+          <div class="cover-inner-matte">
+            
+            <!-- Top Masthead Banner -->
+            <div class="cover-masthead-header">
+              <div class="cover-masthead-meta">
+                <span>ISSUE NO. 21 · COLLECTOR’S EDITION</span>
+                <span>06 NOVEMBER 2026</span>
+                <span>ACCRA & BEYOND</span>
+              </div>
+              <h1 class="cover-masthead-title">THE DIYA EDIT</h1>
+              <p class="cover-masthead-subline">For Diya, with all our love.</p>
+            </div>
+
+            <!-- ============================================================
+                 📷 LOCAL MEDIA: COVER PORTRAIT (DIYA)
+                 LOCAL PATH: assets/images/diya/cover.jpg
+                 Edit 'src' below to your local photo or video (e.g. assets/videos/cover.mp4)
+                 ============================================================ -->
+            <div class="cover-stage">
+              <img id="cover-portrait-img" class="cover-portrait-bg" src="assets/images/diya/cover.jpg" alt="Mardiya (Diya) — The Diya Edit Cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1400&q=85';" />
+              
+              <!-- Gradient Contrast Scrim -->
+              <div class="cover-stage-scrim"></div>
+
+              <!-- Foreground Typography & Cover Lines -->
+              <div class="cover-callouts-overlay">
+                <div class="cover-main-headline-group">
+                  <span class="cover-headline-kicker">A CELEBRATION OF 21 YEARS</span>
+                  <h2 class="cover-hero-headline">“Twenty-One Looks Beautiful On You.”</h2>
+                  <p class="cover-hero-tagline">The girl worth celebrating · A rare kind of beautiful</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Editorial Feature Columns Below the Stage -->
+            <div class="cover-editorial-columns">
+              <div class="editorial-col-item">
+                <span class="col-kicker">FEATURE 01 · PROFILE</span>
+                <h3 class="col-title">The Girl Behind The Name</h3>
+                <p class="col-prose">A genuine heart, a spirit rooted in faith, and a kindness that speaks louder than words.</p>
+              </div>
+
+              <div class="editorial-col-item">
+                <span class="col-kicker">FEATURE 02 · ARCHIVE</span>
+                <h3 class="col-title">The Kenkey Chronicles</h3>
+                <p class="col-prose">Breaking bounds, sharing meals, and the secondary school laughter distance could never dim.</p>
+              </div>
+
+              <div class="editorial-col-item">
+                <span class="col-kicker">FEATURE 03 · LETTERS</span>
+                <h3 class="col-title">Four Voices, One Sister</h3>
+                <p class="col-prose">Complete birthday letters from Matilda, Phyllis, Franca, and Vanessa.</p>
+              </div>
+            </div>
+
+            <!-- Bottom Editorial Monograph Bar -->
+            <div class="cover-bottom-strip">
+              <div class="editorial-barcode-box">
+                <div class="barcode-lines"></div>
+                <div class="barcode-text">
+                  <div>ISSN 2026-1106</div>
+                  <div>PRICELESS / WITH ALL OUR LOVE</div>
+                </div>
+              </div>
+
+              <a href="#the-girl" class="cover-cta-anchor">
+                <span>Explore The Archive</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 02 — THE GIRL BEHIND THE NAME (PORTRAIT PROFILE)
+         ==================================================================== -->
+    <section id="the-girl" class="section-girl">
+      <div class="container">
+        <div class="profile-layout">
+          
+          <!-- Left: Scrapbook Polaroid & Note Cluster -->
+          <div class="profile-scrapbook-cluster">
+            
+            <!-- Sticky Note Scrap -->
+            <div class="note-scrap">
+              <p class="note-scrap-text">
+                "Our prayerful, deen-loving sister. A soul wrapped in barakah."
+              </p>
+            </div>
+
+            <!-- ============================================================
+                 📷 LOCAL MEDIA: PROFILE POLAROID (DIYA)
+                 LOCAL PATH: assets/images/diya/profile.jpg
+                 Edit 'src' below to your local photo or video
+                 ============================================================ -->
+            <div class="polaroid-main">
+              <div class="polaroid-photo">
+                <img id="profile-portrait-img" src="assets/images/diya/profile.jpg" alt="Mardiya (Diya)" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80';" />
+              </div>
+              <p class="polaroid-caption">Mardiya · 21</p>
+            </div>
+
+            <!-- ============================================================
+                 📷 LOCAL MEDIA: CANDID POLAROID (DIYA)
+                 LOCAL PATH: assets/images/memories/golden-glow.jpg
+                 Edit 'src' below to your local photo
+                 ============================================================ -->
+            <div class="polaroid-sub">
+              <div class="polaroid-photo" style="aspect-ratio: 1/1;">
+                <img src="assets/images/memories/golden-glow.jpg" alt="Candid Memory" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80';" />
+              </div>
+              <p class="polaroid-caption" style="font-size: 1.15rem;">The Girl Worth Celebrating</p>
+            </div>
+
+          </div>
+
+          <!-- Right: Profile Editorial Copy -->
+          <div class="profile-content">
+            <span class="section-kicker">01 · THE GIRL BEHIND THE NAME</span>
+            <h2 class="section-title">A rare kind of beautiful.</h2>
+
+            <div class="defining-words">
+              <span>SELFLESS</span>
+              <span class="bullet">·</span>
+              <span>GENUINE</span>
+              <span class="bullet">·</span>
+              <span>KINDHEARTED</span>
+            </div>
+
+            <p class="profile-prose">
+              Some people have a way of making everyone around them feel seen, remembered and loved. Diya is one of those people.
+            </p>
+
+            <p class="profile-prose">
+              A genuine heart, a beautiful spirit, and a kindness that speaks louder than words. From secondary school corridors to navigating miles apart, she remains the friend who shows up, who checks in when life gets noisy, and who holds onto her faith with inspiring devotion.
+            </p>
+
+            <blockquote class="profile-quote">
+              “To say you’re an amazing friend is an understatement; honestly, everyone deserves a Diya and we are so blessed we have ours.”
+            </blockquote>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 03 — SOUL MOMENTS (THE SCRAPBOOK MEMORY ARCHIVE)
+         ==================================================================== -->
+    <section id="soul-moments" class="section-memories">
+      <div class="container">
+        
+        <div class="memories-header">
+          <span class="section-kicker">02 · THE MEMORY ARCHIVE</span>
+          <h2 class="section-title" style="font-size: clamp(2.5rem, 5vw, 3.8rem);">SOUL MOMENTS</h2>
+          <p class="memories-subheading">“The little things became the memories we kept.”</p>
+        </div>
+
+        <!-- Filter Controls -->
+        <div id="memory-filter-tabs" class="filter-tabs">
+          <button class="filter-btn active" data-category="all">All Memories</button>
+          <button class="filter-btn" data-category="shs">SHS Days</button>
+          <button class="filter-btn" data-category="laughter">Gists & Laughter</button>
+          <button class="filter-btn" data-category="sisterhood">Sisterhood & Deen</button>
+          <button class="filter-btn" data-category="candid">Candids</button>
+        </div>
+
+        <!-- ============================================================
+             FEATURED SPOTLIGHT: THE KENKEY CHRONICLES
+             [REPLACE IMAGE]: Change src below to your kenkey / food memory photo
+             ============================================================ -->
+        <div class="featured-memory-card" data-category="shs">
+          <div class="featured-photo-frame" onclick="window.openLightbox(this)">
+            <!-- 📷 IMAGE: KENKEY CHRONICLES -->
+            <img id="memory-kenkey-img" src="assets/images/memories/kenkey-memory.jpg" alt="The Kenkey Chronicles" data-title="The Kenkey Chronicles" data-caption="Breaking bounds, buying kenkey, sharing a meal and having the longest conversations. Some memories become special because of how ordinary they seemed at the time." data-note="SHS canteen was never enough when the urge for hot Ga kenkey called!" data-meta="SHS DAYS · A MEMORY TO KEEP · Senior High School" onerror="this.onerror=null; this.src='src/assets/images/ghanaian_kenkey_dish_1793902710052.jpg';" />
+            <span class="featured-badge">SHS DAYS · A MEMORY TO KEEP</span>
+          </div>
+          <div class="featured-content">
+            <div class="meta-row">
+              <span>Senior High School</span>
+              <span class="meta-separator">·</span>
+              <span>ACCRA · SPECIAL</span>
+            </div>
+            <h3 class="featured-heading">The Kenkey Chronicles</h3>
+            <p class="featured-copy">
+              Breaking bounds, buying kenkey, sharing a meal and having the longest conversations. Some memories become special because of how ordinary they seemed at the time.
+            </p>
+            <div class="featured-handwritten">
+              “SHS canteen was never enough when the urge for hot Ga kenkey called!”
+            </div>
+            <div style="margin-top: 0.5rem;">
+              <button class="btn btn-secondary" onclick="window.openLightbox(this.closest('.featured-memory-card').querySelector('img'))">
+                View Memory Frame 🔍
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============================================================
+             SCRAPBOOK POLAROID GRID
+             [REPLACE IMAGES]: Change src in each card below with your memory photos
+             ============================================================ -->
+        <div id="memories-grid" class="memories-masonry">
+          
+          <!-- Memory 01: Late Night Gisting -->
+          <div class="scrapbook-card reveal-on-scroll memory-item" data-category="laughter" style="transform: rotate(2.2deg);" onclick="window.openLightbox(this.querySelector('img'))">
+            <div class="washi-tape pink" style="top: -12px; left: 25%;"></div>
+            <div class="scrapbook-photo-wrap">
+              <!-- 📷 IMAGE: LATE NIGHT GISTING -->
+              <img id="memory-gisting-img" src="assets/images/memories/gisting-dorm.jpg" alt="Late Night Gisting & Endless Laughter" data-title="Late Night Gisting & Endless Laughter" data-caption="The kind of laughter that made our stomachs ache. Whispering in the dark so the housemistress wouldn't hear, gisting about everything and nothing." data-note="Nobody tells a gist quite like Diya." data-meta="UNFILTERED JOY · Hostel Nights" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80';" />
+            </div>
+            <div class="scrapbook-caption-title">Late Night Gisting & Laughter</div>
+            <div class="scrapbook-handwritten-note">“Nobody tells a gist quite like Diya.”</div>
+            <div class="scrapbook-meta-footer">
+              <span>UNFILTERED JOY</span>
+              <span>Hostel Nights</span>
+            </div>
+          </div>
+
+          <!-- Memory 02: Holding Her Deen -->
+          <div class="scrapbook-card reveal-on-scroll memory-item" data-category="sisterhood" style="transform: rotate(-2.5deg);" onclick="window.openLightbox(this.querySelector('img'))">
+            <div class="washi-tape" style="top: -12px; left: 45%;"></div>
+            <div class="scrapbook-photo-wrap">
+              <!-- 📷 IMAGE: DEEN & PRAYER -->
+              <img id="memory-deen-img" src="assets/images/memories/deen-prayer.jpg" alt="Holding Her Deen & Silent Prayers" data-title="Holding Her Deen & Silent Prayers" data-caption="What we admire most is how you take Allah so serious, how you hold your deen. So prayerful, so beautiful inside and out. You inspire everyone around you." data-note="A soul wrapped in genuine barakah." data-meta="SPIRIT & GRACE · Faith & Reflection" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=800&q=80';" />
+            </div>
+            <div class="scrapbook-caption-title">Holding Her Deen & Prayers</div>
+            <div class="scrapbook-handwritten-note">“A soul wrapped in genuine barakah.”</div>
+            <div class="scrapbook-meta-footer">
+              <span>SPIRIT & GRACE</span>
+              <span>Faith & Reflection</span>
+            </div>
+          </div>
+
+          <!-- Memory 03: The Academic Grind -->
+          <div class="scrapbook-card reveal-on-scroll memory-item" data-category="candid" style="transform: rotate(1.5deg);" onclick="window.openLightbox(this.querySelector('img'))">
+            <div class="washi-tape pink" style="top: -12px; left: 30%;"></div>
+            <div class="scrapbook-photo-wrap">
+              <!-- 📷 IMAGE: ACADEMIC GRIND -->
+              <img id="memory-academic-img" src="assets/images/memories/academic-grind.jpg" alt="The Academic Grind & Pushing Forward" data-title="The Academic Grind & Pushing Forward" data-caption="I see you pushing, I see you going all out and I pray Allah blesses the work of your hands. May your name be mentioned in rooms where you’re not present." data-note="21 looks powerful on you." data-meta="AMBITION & DRIVE · Late Study Sessions" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=80';" />
+            </div>
+            <div class="scrapbook-caption-title">The Academic Grind & Pushing</div>
+            <div class="scrapbook-handwritten-note">“21 looks powerful on you.”</div>
+            <div class="scrapbook-meta-footer">
+              <span>AMBITION & DRIVE</span>
+              <span>Late Study Sessions</span>
+            </div>
+          </div>
+
+          <!-- Memory 04: Showing Up Like Family -->
+          <div class="scrapbook-card reveal-on-scroll memory-item" data-category="sisterhood" style="transform: rotate(-1.2deg);" onclick="window.openLightbox(this.querySelector('img'))">
+            <div class="washi-tape" style="top: -12px; left: 55%;"></div>
+            <div class="scrapbook-photo-wrap">
+              <!-- 📷 IMAGE: FAMILY & SISTERHOOD -->
+              <img id="memory-family-img" src="assets/images/memories/family-care.jpg" alt="Loved Like Family, Cared Like A Sister" data-title="Loved Like Family, Cared Like A Sister" data-caption="The way you show concern, check up on me and even go out of your way to support me and my family means more than you can ever imagine." data-note="More than a friend—a true sister." data-meta="GENUINE CARE · Through Thick & Thin" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80';" />
+            </div>
+            <div class="scrapbook-caption-title">Loved Like Family, A Sister</div>
+            <div class="scrapbook-handwritten-note">“More than a friend—a true sister.”</div>
+            <div class="scrapbook-meta-footer">
+              <span>GENUINE CARE</span>
+              <span>Through Thick & Thin</span>
+            </div>
+          </div>
+
+          <!-- Memory 05: Golden Hour Smile -->
+          <div class="scrapbook-card reveal-on-scroll memory-item" data-category="candid" style="transform: rotate(2.8deg);" onclick="window.openLightbox(this.querySelector('img'))">
+            <div class="washi-tape pink" style="top: -12px; left: 20%;"></div>
+            <div class="scrapbook-photo-wrap">
+              <!-- 📷 IMAGE: GOLDEN GLOW -->
+              <img id="memory-golden-img" src="assets/images/memories/golden-glow.jpg" alt="Golden Hour Glow" data-title="Golden Hour Glow" data-caption="Some people make life a little more beautiful simply by being in it. That radiant smile that makes everybody feel at home." data-note="Radiant, timeless, unforgettable." data-meta="PORTRAIT MOMENT · Reunion Afternoon" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80';" />
+            </div>
+            <div class="scrapbook-caption-title">Golden Hour Smiles</div>
+            <div class="scrapbook-handwritten-note">“Radiant, timeless, unforgettable.”</div>
+            <div class="scrapbook-meta-footer">
+              <span>PORTRAIT MOMENT</span>
+              <span>Reunion Afternoon</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 04 — FOUR HEARTS, ONE SPECIAL GIRL (LETTER & PHOTO COLLECTION)
+         ==================================================================== -->
+    <section id="four-hearts" class="section-letters">
+      <div class="container">
+        
+        <div class="letters-header">
+          <span class="section-kicker">03 · THE LETTER & MEMORY COLLECTION</span>
+          <h2 class="section-title" style="font-size: clamp(2.5rem, 5vw, 3.8rem);">FOUR HEARTS, ONE SPECIAL GIRL</h2>
+          <p class="letters-subheading">“Four voices, one sisterhood, endless shared memories.”</p>
+        </div>
+
+        <!-- 4 Distinct Stationery Cards with Embedded Photo Albums -->
+        <div class="letters-grid">
+
+          <!-- ============================================================
+               FRIEND 01: MATILDA
+               [REPLACE IMAGES]: Change src below for Matilda's avatar and memory photos
+               ============================================================ -->
+          <div class="letter-card reveal-on-scroll" id="card-matilda">
+            <div>
+              <div class="letter-card-top">
+                <div class="letter-author-info">
+                  <div class="author-avatar">
+                    <!-- 📷 IMAGE: MATILDA AVATAR -->
+                    <img id="friend-avatar-matilda" src="assets/images/friends/matilda.jpg" alt="Matilda" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80';" />
+                  </div>
+                  <div>
+                    <h3 class="author-name">Matilda</h3>
+                    <span class="author-role">The Sister In Laughter</span>
+                  </div>
+                </div>
+                <div class="wax-seal-badge" title="Sealed With Love">M</div>
+              </div>
+
+              <h4 class="letter-card-title">CELEBRATING A RARE GEM</h4>
+              <p class="letter-excerpt">
+                Happy birthday my love …. I don’t really know where to start from but let’s hear what my heart has to say…. Happy birthday Mardiya , I thank Allah for adding one more year to you. To say you’re an amazing friend is an understatement...
+              </p>
+
+              <!-- 📸 MATILDA'S PHOTO REEL / MEMORY STRIP (REPLACES VOICE NOTE) -->
+              <div class="friend-memories-box" onclick="window.openFriendAlbum('matilda')" title="Click to view all shared pictures with Matilda">
+                <div class="friend-memories-header">
+                  <span>📸 Diya & Matilda’s Moments</span>
+                  <span>View All ➜</span>
+                </div>
+                <div class="friend-thumbnails-strip">
+                  <div class="friend-thumb-item">
+                    <!-- 📷 IMAGE: MATILDA & DIYA PHOTO 1 -->
+                    <img src="assets/images/friends/matilda-memory1.jpg" alt="Diya & Matilda 1" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=200&q=80';" />
+                  </div>
+                  <div class="friend-thumb-item">
+                    <!-- 📷 IMAGE: MATILDA & DIYA PHOTO 2 -->
+                    <img src="assets/images/friends/matilda-memory2.jpg" alt="Diya & Matilda 2" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&q=80';" />
+                  </div>
+                  <div class="friend-thumb-more-badge">+Shared Photos</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="letter-card-actions">
+              <button class="btn btn-primary" onclick="window.openLetterModal('matilda')">
+                Read Her Letter ♡
+              </button>
+              <button class="btn btn-secondary" onclick="window.openFriendAlbum('matilda')">
+                View Photos 📸
+              </button>
+            </div>
+          </div>
+
+          <!-- ============================================================
+               FRIEND 02: PHYLLIS
+               [REPLACE IMAGES]: Change src below for Phyllis's avatar and memory photos
+               ============================================================ -->
+          <div class="letter-card reveal-on-scroll" id="card-phyllis">
+            <div>
+              <div class="letter-card-top">
+                <div class="letter-author-info">
+                  <div class="author-avatar">
+                    <!-- 📷 IMAGE: PHYLLIS AVATAR -->
+                    <img id="friend-avatar-phyllis" src="assets/images/friends/phyllis.jpg" alt="Phyllis" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80';" />
+                  </div>
+                  <div>
+                    <h3 class="author-name">Phyllis</h3>
+                    <span class="author-role">From SHS Till Forever</span>
+                  </div>
+                </div>
+                <div class="wax-seal-badge" title="Sealed With Love">P</div>
+              </div>
+
+              <h4 class="letter-card-title">A FRIEND FOR LIFE</h4>
+              <p class="letter-excerpt">
+                Happy birthday, my love 🥺❤️. From SHS till now, look at us. Years have passed, distance came but you are still one of the few people I can boldly call MY FRIEND. And I don't take that for granted at all...
+              </p>
+
+              <!-- 📸 PHYLLIS'S PHOTO REEL / MEMORY STRIP (REPLACES VOICE NOTE) -->
+              <div class="friend-memories-box" onclick="window.openFriendAlbum('phyllis')" title="Click to view all shared pictures with Phyllis">
+                <div class="friend-memories-header">
+                  <span>📸 Diya & Phyllis’s Moments</span>
+                  <span>View All ➜</span>
+                </div>
+                <div class="friend-thumbnails-strip">
+                  <div class="friend-thumb-item">
+                    <!-- 📷 IMAGE: PHYLLIS & DIYA PHOTO 1 -->
+                    <img src="assets/images/friends/phyllis-memory1.jpg" alt="Diya & Phyllis 1" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=200&q=80';" />
+                  </div>
+                  <div class="friend-thumb-item">
+                    <!-- 📷 IMAGE: PHYLLIS & DIYA PHOTO 2 -->
+                    <img src="assets/images/friends/phyllis-memory2.jpg" alt="Diya & Phyllis 2" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=200&q=80';" />
+                  </div>
+                  <div class="friend-thumb-more-badge">+Shared Photos</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="letter-card-actions">
+              <button class="btn btn-primary" onclick="window.openLetterModal('phyllis')">
+                Read Her Letter ♡
+              </button>
+              <button class="btn btn-secondary" onclick="window.openFriendAlbum('phyllis')">
+                View Photos 📸
+              </button>
+            </div>
+          </div>
+
+          <!-- ============================================================
+               FRIEND 03: FRANCA
+               [REPLACE IMAGES]: Change src below for Franca's avatar and memory photos
+               ============================================================ -->
+          <div class="letter-card reveal-on-scroll" id="card-franca">
+            <div>
+              <div class="letter-card-top">
+                <div class="letter-author-info">
+                  <div class="author-avatar">
+                    <!-- 📷 IMAGE: FRANCA AVATAR -->
+                    <img id="friend-avatar-franca" src="assets/images/friends/franca.jpg" alt="Franca" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=300&q=80';" />
+                  </div>
+                  <div>
+                    <h3 class="author-name">Franca</h3>
+                    <span class="author-role">Chosen Sister & Family</span>
+                  </div>
+                </div>
+                <div class="wax-seal-badge" title="Sealed With Love">F</div>
+              </div>
+
+              <h4 class="letter-card-title">MORE THAN A FRIEND</h4>
+              <p class="letter-excerpt">
+                Happy birthday to my girl and one of the biggest blessings life has given me 🥹❤️ Honestly, I don’t even know how to put into words how much you mean to me. From SHS till now you have shown me a kind of friendship I never knew...
+              </p>
+
+              <!-- 📸 FRANCA'S PHOTO REEL / MEMORY STRIP (REPLACES VOICE NOTE) -->
+              <div class="friend-memories-box" onclick="window.openFriendAlbum('franca')" title="Click to view all shared pictures with Franca">
+                <div class="friend-memories-header">
+                  <span>📸 Diya & Franca’s Moments</span>
+                  <span>View All ➜</span>
+                </div>
+                <div class="friend-thumbnails-strip">
+                  <div class="friend-thumb-item">
+                    <!-- 📷 IMAGE: FRANCA & DIYA PHOTO 1 -->
+                    <img src="assets/images/friends/franca-memory1.jpg" alt="Diya & Franca 1" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80';" />
+                  </div>
+                  <div class="friend-thumb-item">
+                    <!-- 📷 IMAGE: FRANCA & DIYA PHOTO 2 -->
+                    <img src="assets/images/friends/franca-memory2.jpg" alt="Diya & Franca 2" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=200&q=80';" />
+                  </div>
+                  <div class="friend-thumb-more-badge">+Shared Photos</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="letter-card-actions">
+              <button class="btn btn-primary" onclick="window.openLetterModal('franca')">
+                Read Her Letter ♡
+              </button>
+              <button class="btn btn-secondary" onclick="window.openFriendAlbum('franca')">
+                View Photos 📸
+              </button>
+            </div>
+          </div>
+
+          <!-- ============================================================
+               FRIEND 04: VANESSA
+               [REPLACE IMAGES]: Change src below for Vanessa's avatar and memory photos
+               ============================================================ -->
+          <div class="letter-card reveal-on-scroll" id="card-vanessa">
+            <div>
+              <div class="letter-card-top">
+                <div class="letter-author-info">
+                  <div class="author-avatar">
+                    <!-- 📷 IMAGE: VANESSA AVATAR -->
+                    <img id="friend-avatar-vanessa" src="assets/images/friends/vanessa.jpg" alt="Vanessa" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=300&q=80';" />
+                  </div>
+                  <div>
+                    <h3 class="author-name">Vanessa</h3>
+                    <span class="author-role">Always In My Heart</span>
+                  </div>
+                </div>
+                <div class="wax-seal-badge" title="Sealed With Love">V</div>
+              </div>
+
+              <h4 class="letter-card-title">CLOSE ACROSS THE MILES</h4>
+              <p class="letter-excerpt">
+                Happy Birthday to you Diyaaa 🥹🎂❤️ You’re such a beautiful soul, and I truly hope this new chapter brings you nothing but happiness, peace, love, and countless reasons to smile. May all the little things you’ve been praying for...
+              </p>
+
+              <!-- 📸 VANESSA'S PHOTO REEL / MEMORY STRIP (REPLACES VOICE NOTE) -->
+              <div class="friend-memories-box" onclick="window.openFriendAlbum('vanessa')" title="Click to view all shared pictures with Vanessa">
+                <div class="friend-memories-header">
+                  <span>📸 Diya & Vanessa’s Moments</span>
+                  <span>View All ➜</span>
+                </div>
+                <div class="friend-thumbnails-strip">
+                  <div class="friend-thumb-item">
+                    <!-- 📷 IMAGE: VANESSA & DIYA PHOTO 1 -->
+                    <img src="assets/images/friends/vanessa-memory1.jpg" alt="Diya & Vanessa 1" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=200&q=80';" />
+                  </div>
+                  <div class="friend-thumb-item">
+                    <!-- 📷 IMAGE: VANESSA & DIYA PHOTO 2 -->
+                    <img src="assets/images/friends/vanessa-memory2.jpg" alt="Diya & Vanessa 2" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&q=80';" />
+                  </div>
+                  <div class="friend-thumb-more-badge">+Shared Photos</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="letter-card-actions">
+              <button class="btn btn-primary" onclick="window.openLetterModal('vanessa')">
+                Read Her Letter ♡
+              </button>
+              <button class="btn btn-secondary" onclick="window.openFriendAlbum('vanessa')">
+                View Photos 📸
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 05 — ACROSS THE MILES (POSTCARD COMPOSITION)
+         ==================================================================== -->
+    <section id="across-the-miles" class="section-postcards">
+      <div class="container">
+        
+        <div class="postcards-header">
+          <span class="section-kicker">04 · LITTLE REMINDERS FROM HOME</span>
+          <h2 class="section-title" style="font-size: clamp(2.5rem, 5vw, 3.8rem);">ACROSS THE MILES</h2>
+          <p class="postcards-subheading">“Distance means so little when someone means so much.”</p>
+        </div>
+
+        <!-- Vintage Postcards with Direct Editable Images -->
+        <div class="postcards-grid">
+
+          <!-- Postcard 1: Matilda -->
+          <div class="vintage-postcard reveal-on-scroll">
+            <div class="postcard-left">
+              <div class="meta-row" style="margin-bottom: 0.75rem;">
+                <span>AIRMAIL</span>
+                <span class="meta-separator">·</span>
+                <span>SPECIAL DELIVERY</span>
+              </div>
+              <p class="postcard-message-quote">“I miss the gisting, I miss laughing together.”</p>
+              <div>
+                <span class="postcard-sender">— Love, Matilda</span>
+                <div style="margin-top: 0.75rem; display: flex; gap: 0.5rem;">
+                  <button class="btn btn-soft" style="padding: 0.4rem 0.9rem; font-size: 0.75rem;" onclick="window.openLetterModal('matilda')">
+                    Read Letter
+                  </button>
+                  <button class="btn btn-secondary" style="padding: 0.4rem 0.9rem; font-size: 0.75rem;" onclick="window.openFriendAlbum('matilda')">
+                    Photos 📸
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="postcard-right">
+              <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                <div class="postmark-circle">
+                  <span>GHANA</span>
+                  <span style="font-weight: 700;">NOV 06</span>
+                  <span>2026</span>
+                </div>
+                <div class="postage-stamp-box">
+                  <!-- 📷 IMAGE: POSTCARD STAMP MATILDA -->
+                  <img src="assets/images/friends/matilda.jpg" alt="Matilda Stamp" style="width: 100%; height: 100%; object-fit: cover; border-radius: 2px;" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80';" />
+                </div>
+              </div>
+              <div class="postcard-recipient-address">
+                <strong>TO:</strong> Mardiya (Diya)<br/>
+                Wherever Your Heart Finds Home<br/>
+                <em>Across All The Miles ♡</em>
+              </div>
+            </div>
+          </div>
+
+          <!-- Postcard 2: Phyllis -->
+          <div class="vintage-postcard reveal-on-scroll">
+            <div class="postcard-left">
+              <div class="meta-row" style="margin-bottom: 0.75rem;">
+                <span>AIRMAIL</span>
+                <span class="meta-separator">·</span>
+                <span>SPECIAL DELIVERY</span>
+              </div>
+              <p class="postcard-message-quote">“Thank you for showing up even when miles apart.”</p>
+              <div>
+                <span class="postcard-sender">— Love, Phyllis</span>
+                <div style="margin-top: 0.75rem; display: flex; gap: 0.5rem;">
+                  <button class="btn btn-soft" style="padding: 0.4rem 0.9rem; font-size: 0.75rem;" onclick="window.openLetterModal('phyllis')">
+                    Read Letter
+                  </button>
+                  <button class="btn btn-secondary" style="padding: 0.4rem 0.9rem; font-size: 0.75rem;" onclick="window.openFriendAlbum('phyllis')">
+                    Photos 📸
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="postcard-right">
+              <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                <div class="postmark-circle">
+                  <span>GHANA</span>
+                  <span style="font-weight: 700;">NOV 06</span>
+                  <span>2026</span>
+                </div>
+                <div class="postage-stamp-box">
+                  <!-- 📷 IMAGE: POSTCARD STAMP PHYLLIS -->
+                  <img src="assets/images/friends/phyllis.jpg" alt="Phyllis Stamp" style="width: 100%; height: 100%; object-fit: cover; border-radius: 2px;" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&q=80';" />
+                </div>
+              </div>
+              <div class="postcard-recipient-address">
+                <strong>TO:</strong> Mardiya (Diya)<br/>
+                Wherever Your Heart Finds Home<br/>
+                <em>Across All The Miles ♡</em>
+              </div>
+            </div>
+          </div>
+
+          <!-- Postcard 3: Franca -->
+          <div class="vintage-postcard reveal-on-scroll">
+            <div class="postcard-left">
+              <div class="meta-row" style="margin-bottom: 0.75rem;">
+                <span>AIRMAIL</span>
+                <span class="meta-separator">·</span>
+                <span>SPECIAL DELIVERY</span>
+              </div>
+              <p class="postcard-message-quote">“If I had to choose my friend all over again I would choose you every single time.”</p>
+              <div>
+                <span class="postcard-sender">— Love, Franca</span>
+                <div style="margin-top: 0.75rem; display: flex; gap: 0.5rem;">
+                  <button class="btn btn-soft" style="padding: 0.4rem 0.9rem; font-size: 0.75rem;" onclick="window.openLetterModal('franca')">
+                    Read Letter
+                  </button>
+                  <button class="btn btn-secondary" style="padding: 0.4rem 0.9rem; font-size: 0.75rem;" onclick="window.openFriendAlbum('franca')">
+                    Photos 📸
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="postcard-right">
+              <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                <div class="postmark-circle">
+                  <span>GHANA</span>
+                  <span style="font-weight: 700;">NOV 06</span>
+                  <span>2026</span>
+                </div>
+                <div class="postage-stamp-box">
+                  <!-- 📷 IMAGE: POSTCARD STAMP FRANCA -->
+                  <img src="assets/images/friends/franca.jpg" alt="Franca Stamp" style="width: 100%; height: 100%; object-fit: cover; border-radius: 2px;" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=200&q=80';" />
+                </div>
+              </div>
+              <div class="postcard-recipient-address">
+                <strong>TO:</strong> Mardiya (Diya)<br/>
+                Wherever Your Heart Finds Home<br/>
+                <em>Across All The Miles ♡</em>
+              </div>
+            </div>
+          </div>
+
+          <!-- Postcard 4: Vanessa -->
+          <div class="vintage-postcard reveal-on-scroll">
+            <div class="postcard-left">
+              <div class="meta-row" style="margin-bottom: 0.75rem;">
+                <span>AIRMAIL</span>
+                <span class="meta-separator">·</span>
+                <span>SPECIAL DELIVERY</span>
+              </div>
+              <p class="postcard-message-quote">“The beautiful memories we’ve shared remain close to my heart.”</p>
+              <div>
+                <span class="postcard-sender">— Love, Vanessa</span>
+                <div style="margin-top: 0.75rem; display: flex; gap: 0.5rem;">
+                  <button class="btn btn-soft" style="padding: 0.4rem 0.9rem; font-size: 0.75rem;" onclick="window.openLetterModal('vanessa')">
+                    Read Letter
+                  </button>
+                  <button class="btn btn-secondary" style="padding: 0.4rem 0.9rem; font-size: 0.75rem;" onclick="window.openFriendAlbum('vanessa')">
+                    Photos 📸
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="postcard-right">
+              <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                <div class="postmark-circle">
+                  <span>GHANA</span>
+                  <span style="font-weight: 700;">NOV 06</span>
+                  <span>2026</span>
+                </div>
+                <div class="postage-stamp-box">
+                  <!-- 📷 IMAGE: POSTCARD STAMP VANESSA -->
+                  <img src="assets/images/friends/vanessa.jpg" alt="Vanessa Stamp" style="width: 100%; height: 100%; object-fit: cover; border-radius: 2px;" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=200&q=80';" />
+                </div>
+              </div>
+              <div class="postcard-recipient-address">
+                <strong>TO:</strong> Mardiya (Diya)<br/>
+                Wherever Your Heart Finds Home<br/>
+                <em>Across All The Miles ♡</em>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 06 — A NEW CHAPTER (DRAMATIC BURGUNDY TRIBUTE)
+         ==================================================================== -->
+    <section id="a-new-chapter" class="section-tribute">
+      <div class="container">
+        
+        <div class="tribute-box">
+          <p class="tribute-kicker">05 · THE FINAL TRIBUTE</p>
+          <h2 class="tribute-headline">A NEW CHAPTER BEGINS</h2>
+          <p class="tribute-subheading">“May 21 be as beautiful as everything you are becoming.”</p>
+
+          <div class="tribute-prayer-card">
+            <p class="tribute-prayer-text">Dear Diya,
+
+Twenty-one looks beautiful on you.
+
+May Allah bless your new chapter with ease, endless barakah and beautiful opportunities. May your hard work bear fruit, your silent prayers find answers and your heart always find reasons to be grateful.
+
+May you continue to grow, flourish and become everything you are meant to be.
+
+Never forget how deeply you are loved.
+
+Happy 21st birthday, Mardiya.
+
+Until the next reunion, the next laughter, the next gist and the next kenkey date.
+
+With all our love, always.</p>
+
+            <p class="tribute-signoff">— Matilda, Phyllis, Franca & Vanessa ♡</p>
+          </div>
+
+          <div class="tribute-actions">
+            <button class="btn btn-tribute-primary celebrate-btn">
+              Send Love & Blessings ✨
+            </button>
+            <button id="replay-journey-btn" class="btn btn-tribute-secondary">
+              Replay Our Little World ✉️
+            </button>
+          </div>
+
+          <div class="tribute-footer-notice">
+            <p>THE END OF THIS EDITION · THE BEGINNING OF ANOTHER BEAUTIFUL CHAPTER</p>
+            <p style="margin-top: 0.5rem; opacity: 0.7;">THE DIYA EDIT · ISSUE NO. 21 · 06 NOVEMBER 2026</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         MODAL: FULL LETTER STATIONERY READER
+         ==================================================================== -->
+    <div id="letter-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="letter-modal-paper">
+        
+        <div class="modal-header">
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <div class="author-avatar" style="width: 50px; height: 50px;">
+              <img id="modal-author-avatar" src="" alt="Author" />
+              <div class="author-avatar-initial" style="display:none;"></div>
+            </div>
+            <div>
+              <h3 id="modal-author-name" class="font-serif" style="font-size: 1.5rem; color: var(--color-burgundy); line-height: 1.1;"></h3>
+              <span id="modal-author-role" style="font-size: 0.6875rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-gold); font-weight: 700;"></span>
+            </div>
+          </div>
+
+          <button id="modal-close-button" class="modal-close-btn" aria-label="Close Letter">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <div class="modal-body-scroll">
+          <h4 id="modal-title" class="modal-letter-title"></h4>
+          <div id="modal-letter-content" class="modal-letter-content"></div>
+        </div>
+
+        <div class="modal-footer">
+          <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-burgundy); font-weight: 600;">
+            THE DIYA EDIT · PERSONAL ARCHIVE
+          </span>
+          <button id="modal-album-btn" class="btn btn-secondary" style="padding: 0.4rem 1.1rem; font-size: 0.75rem;">
+            View Shared Photos 📸
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         MODAL: FRIENDSHIP MEMORIES PHOTO ALBUM
+         [REPLACE IMAGES]: Each friend has 3 editable polaroid photo cards below!
+         Change the src attributes in this modal to show your own photos with each friend.
+         ==================================================================== -->
+    <div id="friend-album-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="friend-album-name">
+      <div class="friend-album-modal">
+        
+        <!-- Album Modal Header -->
+        <div class="modal-header">
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <div class="author-avatar" style="width: 50px; height: 50px;">
+              <img id="friend-album-avatar" src="assets/images/friends/matilda.jpg" alt="Friend Avatar" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80';" />
+            </div>
+            <div>
+              <h3 id="friend-album-name" class="font-serif" style="font-size: 1.5rem; color: var(--color-burgundy); line-height: 1.1;">Matilda & Diya</h3>
+              <span id="friend-album-role" style="font-size: 0.6875rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-gold); font-weight: 700;">SHARED MEMORY REEL · ISSUE NO. 21</span>
+            </div>
+          </div>
+
+          <button id="friend-album-close-btn" class="modal-close-btn" aria-label="Close Photo Album">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Album Sub-Bar -->
+        <div style="padding: 0.75rem 2.5rem; background: #FAF5EE; border-bottom: 1px solid rgba(107, 31, 45, 0.08); display: flex; justify-content: space-between; align-items: center;">
+          <p id="friend-album-quote" style="font-family: var(--font-serif); font-style: italic; font-size: 0.9375rem; color: var(--color-burgundy); margin: 0;">
+            “Four voices, one sisterhood, endless shared memories.”
+          </p>
+          <span style="font-size: 0.6875rem; color: var(--color-ink-muted); text-transform: uppercase; letter-spacing: 0.08em;">Click any photo to enlarge 🔍</span>
+        </div>
+
+        <!-- ============================================================
+             FRIEND ALBUM PANELS (One active at a time)
+             ============================================================ -->
+
+        <!-- 📸 MATILDA'S PHOTO COLLECTION -->
+        <div id="album-panel-matilda" class="friend-album-panel" style="display: block;">
+          <div class="friend-album-gallery">
+            
+            <!-- Matilda Photo 1 -->
+            <div class="friend-album-polaroid" onclick="window.openLightbox(this.querySelector('img'))">
+              <div class="friend-album-photo">
+                <!-- 📷 REPLACE: MATILDA & DIYA PHOTO 1 -->
+                <img src="assets/images/friends/matilda-memory1.jpg" alt="Late Night Dorm Gisting" data-title="Late Night Gists With Matilda" data-caption="Whispering until 2 AM in the dorm, sharing secrets and giggling under bedsheets so the housemistress wouldn't hear." data-note="Nobody tells a gist quite like Diya!" data-meta="MATILDA & DIYA · SHS Dorm Memories" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=80';" />
+              </div>
+              <div class="friend-album-caption">Late night gisting in the dorm</div>
+              <div class="friend-album-date">SHS DAYS · 2022</div>
+            </div>
+
+            <!-- Matilda Photo 2 -->
+            <div class="friend-album-polaroid" onclick="window.openLightbox(this.querySelector('img'))">
+              <div class="friend-album-photo">
+                <!-- 📷 REPLACE: MATILDA & DIYA PHOTO 2 -->
+                <img src="assets/images/friends/matilda-memory2.jpg" alt="Laughter Until Our Stomachs Ached" data-title="Stomach-Aching Laughter" data-caption="The type of belly laughs where tears stream down our faces and we couldn't even breathe." data-note="A sister in genuine laughter." data-meta="MATILDA & DIYA · Accra Moments" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80';" />
+              </div>
+              <div class="friend-album-caption">Laughter until our stomachs ached</div>
+              <div class="friend-album-date">UNFILTERED SMILES · 2024</div>
+            </div>
+
+            <!-- Matilda Photo 3 -->
+            <div class="friend-album-polaroid" onclick="window.openLightbox(this.querySelector('img'))">
+              <div class="friend-album-photo">
+                <!-- 📷 REPLACE: MATILDA & DIYA PHOTO 3 -->
+                <img src="assets/images/friends/matilda-memory3.jpg" alt="Celebrating Our Rare Gem" data-title="Celebrating A Rare Gem" data-caption="To say you're an amazing friend is an understatement. You are an answered prayer in human form." data-note="Twenty-one looks beautiful on you!" data-meta="MATILDA & DIYA · Milestone 21" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80';" />
+              </div>
+              <div class="friend-album-caption">Celebrating our rare gem turning 21</div>
+              <div class="friend-album-date">GOLDEN MILESTONE · 2026</div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 📸 PHYLLIS'S PHOTO COLLECTION -->
+        <div id="album-panel-phyllis" class="friend-album-panel" style="display: none;">
+          <div class="friend-album-gallery">
+            
+            <!-- Phyllis Photo 1 -->
+            <div class="friend-album-polaroid" onclick="window.openLightbox(this.querySelector('img'))">
+              <div class="friend-album-photo">
+                <!-- 📷 REPLACE: PHYLLIS & DIYA PHOTO 1 -->
+                <img src="assets/images/friends/phyllis-memory1.jpg" alt="From SHS Hallways Till Forever" data-title="From SHS Hallways Till Forever" data-caption="From high school compound to adulthood. Years have passed, distance came, but you are still one of the few people I can boldly call MY FRIEND." data-note="And I don't take that for granted at all." data-meta="PHYLLIS & DIYA · SHS Compound" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=600&q=80';" />
+              </div>
+              <div class="friend-album-caption">From SHS hallways till forever</div>
+              <div class="friend-album-date">HIGH SCHOOL BOND · 2022</div>
+            </div>
+
+            <!-- Phyllis Photo 2 -->
+            <div class="friend-album-polaroid" onclick="window.openLightbox(this.querySelector('img'))">
+              <div class="friend-album-photo">
+                <!-- 📷 REPLACE: PHYLLIS & DIYA PHOTO 2 -->
+                <img src="assets/images/friends/phyllis-memory2.jpg" alt="Reunion & Timeless Conversations" data-title="Reunions & Warm Hugs" data-caption="Picking up right where we left off, no awkward pauses, just genuine affection and shared life updates." data-note="Always showing up for me." data-meta="PHYLLIS & DIYA · Afternoon Catchup" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80';" />
+              </div>
+              <div class="friend-album-caption">Reunions & timeless conversations</div>
+              <div class="friend-album-date">TIMELESS BOND · 2024</div>
+            </div>
+
+            <!-- Phyllis Photo 3 -->
+            <div class="friend-album-polaroid" onclick="window.openLightbox(this.querySelector('img'))">
+              <div class="friend-album-photo">
+                <!-- 📷 REPLACE: PHYLLIS & DIYA PHOTO 3 -->
+                <img src="assets/images/friends/phyllis-memory3.jpg" alt="An Inspiring Woman of Faith" data-title="Inspiring Woman of Faith" data-caption="The way you take Allah so serious, how you hold your deen. So prayerful, so beautiful inside and out." data-note="I pray Allah grants your heart's desires." data-meta="PHYLLIS & DIYA · Prayers & Grace" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=600&q=80';" />
+              </div>
+              <div class="friend-album-caption">An inspiring sister of faith & light</div>
+              <div class="friend-album-date">FAITH & BEAUTY · 2026</div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 📸 FRANCA'S PHOTO COLLECTION -->
+        <div id="album-panel-franca" class="friend-album-panel" style="display: none;">
+          <div class="friend-album-gallery">
+            
+            <!-- Franca Photo 1 -->
+            <div class="friend-album-polaroid" onclick="window.openLightbox(this.querySelector('img'))">
+              <div class="friend-album-photo">
+                <!-- 📷 REPLACE: FRANCA & DIYA PHOTO 1 -->
+                <img src="assets/images/friends/franca-memory1.jpg" alt="Chosen Sister & Pure Heart" data-title="More Than A Friend: Chosen Sister" data-caption="You have shown me a kind of friendship I never knew I needed. You became more than just a friend, you became family." data-note="If I had to choose, I’d choose you every time." data-meta="FRANCA & DIYA · Sisterhood For Life" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80';" />
+              </div>
+              <div class="friend-album-caption">More than a friend—family</div>
+              <div class="friend-album-date">CHOSEN SISTER · 2023</div>
+            </div>
+
+            <!-- Franca Photo 2 -->
+            <div class="friend-album-polaroid" onclick="window.openLightbox(this.querySelector('img'))">
+              <div class="friend-album-photo">
+                <!-- 📷 REPLACE: FRANCA & DIYA PHOTO 2 -->
+                <img src="assets/images/friends/franca-memory2.jpg" alt="Going Out of Your Way For Me" data-title="Showing Concern & Going The Extra Mile" data-caption="The way you show concern, check up on me and even go out of your way to support me and my family means more than you can ever imagine." data-note="A friend who feels like home." data-meta="FRANCA & DIYA · Genuine Heart" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=600&q=80';" />
+              </div>
+              <div class="friend-album-caption">Going out of your way to care</div>
+              <div class="friend-album-date">HEART OF GOLD · 2024</div>
+            </div>
+
+            <!-- Franca Photo 3 -->
+            <div class="friend-album-polaroid" onclick="window.openLightbox(this.querySelector('img'))">
+              <div class="friend-album-photo">
+                <!-- 📷 REPLACE: FRANCA & DIYA PHOTO 3 -->
+                <img src="assets/images/friends/franca-memory3.jpg" alt="Stepping Boldly Into 21" data-title="Stepping Boldly Into 21" data-caption="May your name be mentioned in rooms where you’re not present, may doors of greatness open for you without stress." data-note="Happy 21st, my forever friend!" data-meta="FRANCA & DIYA · Blessings Ahead" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80';" />
+              </div>
+              <div class="friend-album-caption">Stepping boldly into greatness at 21</div>
+              <div class="friend-album-date">BARAKAH & SUCCESS · 2026</div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 📸 VANESSA'S PHOTO COLLECTION -->
+        <div id="album-panel-vanessa" class="friend-album-panel" style="display: none;">
+          <div class="friend-album-gallery">
+            
+            <!-- Vanessa Photo 1 -->
+            <div class="friend-album-polaroid" onclick="window.openLightbox(this.querySelector('img'))">
+              <div class="friend-album-photo">
+                <!-- 📷 REPLACE: VANESSA & DIYA PHOTO 1 -->
+                <img src="assets/images/friends/vanessa-memory1.jpg" alt="Warmth & Beautiful Soul" data-title="A Beautiful Soul Inside & Out" data-caption="You’re such a beautiful soul, and I truly hope this new chapter brings you nothing but happiness, peace, love, and countless reasons to smile." data-note="Radiant kindness that never fades." data-meta="VANESSA & DIYA · Sweet Memories" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=80';" />
+              </div>
+              <div class="friend-album-caption">A beautiful soul inside & out</div>
+              <div class="friend-album-date">SWEETEST MOMENTS · 2023</div>
+            </div>
+
+            <!-- Vanessa Photo 2 -->
+            <div class="friend-album-polaroid" onclick="window.openLightbox(this.querySelector('img'))">
+              <div class="friend-album-photo">
+                <!-- 📷 REPLACE: VANESSA & DIYA PHOTO 2 -->
+                <img src="assets/images/friends/vanessa-memory2.jpg" alt="Holding Every Memory Close" data-title="Close Across The Distance" data-caption="Even though we don’t talk often, please know that the beautiful memories we’ve shared remain close to my heart." data-note="Distance can never erase true friendship." data-meta="VANESSA & DIYA · Across The Miles" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80';" />
+              </div>
+              <div class="friend-album-caption">Memories held close to heart</div>
+              <div class="friend-album-date">ACROSS THE MILES · 2024</div>
+            </div>
+
+            <!-- Vanessa Photo 3 -->
+            <div class="friend-album-polaroid" onclick="window.openLightbox(this.querySelector('img'))">
+              <div class="friend-album-photo">
+                <!-- 📷 REPLACE: VANESSA & DIYA PHOTO 3 -->
+                <img src="assets/images/friends/vanessa-memory3.jpg" alt="An Answered Prayer for 21" data-title="Prayers for Your New Chapter" data-caption="May all the little things you’ve been praying for quietly find their way to you, and may this year be filled with growth, joy, and peace." data-note="Celebrate yourself to the fullest!" data-meta="VANESSA & DIYA · Special Wishes" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=600&q=80';" />
+              </div>
+              <div class="friend-album-caption">Silent prayers answered at 21</div>
+              <div class="friend-album-date">PEACE & JOY · 2026</div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Modal Footer Actions -->
+        <div class="modal-footer">
+          <button id="friend-album-switch-letter" class="btn btn-primary" style="padding: 0.5rem 1.4rem; font-size: 0.8125rem;">
+            Read Birthday Letter ♡
+          </button>
+          <button id="friend-album-done-btn" class="btn btn-secondary" style="padding: 0.5rem 1.4rem; font-size: 0.8125rem;">
+            Done Viewing
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         MODAL: HIGH-RESOLUTION LIGHTBOX
+         ==================================================================== -->
+    <div id="lightbox-modal" class="lightbox-overlay" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+      <div class="lightbox-content">
+        <div class="lightbox-img-wrap">
+          <img id="lightbox-image" src="" alt="Memory Frame" />
+          <video id="lightbox-video" src="" controls playsinline style="display:none; width: 100%; height: 100%; max-height: 80vh; object-fit: contain;"></video>
+        </div>
+        <div class="lightbox-details">
+          <div>
+            <div id="lightbox-meta" class="meta-row" style="margin-bottom: 0.75rem;"></div>
+            <h3 id="lightbox-title" class="lightbox-title"></h3>
+            <p id="lightbox-caption" class="lightbox-caption"></p>
+            <div id="lightbox-note" class="lightbox-note"></div>
+          </div>
+          <div style="margin-top: 2rem; display: flex; justify-content: flex-end;">
+            <button id="lightbox-close" class="btn btn-primary" style="padding: 0.5rem 1.5rem; font-size: 0.75rem;">
+              Close Frame
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Module Script -->
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>
