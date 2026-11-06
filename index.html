@@ -26,6 +26,9 @@
   </head>
   <body>
 
+    <!-- Original gentle instrumental loop. Replace this file or update src to change the song locally. -->
+    <audio id="background-music" src="assets/audio/Rema - Calm Down (Prod. Andre Vibez).mp3" loop preload="none"></audio>
+
     <!-- ====================================================================
          SECTION 00 — THE INVITATION (ANIMATED OPENING ENVELOPE)
          ==================================================================== -->
@@ -176,6 +179,14 @@
 
       </div>
     </header>
+
+    <div class="music-control">
+      <button id="music-toggle" class="btn btn-primary music-toggle" type="button" aria-label="Play background music" aria-pressed="false">
+        <span aria-hidden="true">♫</span>
+        <span id="music-toggle-label">Play music</span>
+      </button>
+      <span id="music-status" clacs="music-status" role="status" aria-live="polite"></span>
+    </div>
 
     <!-- ====================================================================
          SECTION 01 — THE COVER STORY (LUXURY VOGUE-STYLE EDITORIAL COVER)
